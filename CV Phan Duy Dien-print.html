@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CV — Phan Duy Diện · Senior Digital Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="image-slot.js"></script>
+<style>
+  :root {
+    --bg: #F4EFE3;
+    --surface: #FAF6EB;
+    --ink: #1C2420;
+    --ink-soft: #3A463C;
+    --muted: #7C8076;
+    --line: #D9D2C2;
+    --green: #3A5A40;
+    --green-deep: #2A4530;
+    --olive: #6B7E5C;
+    --accent: #3A5A40;
+    --sans: 'Space Grotesk', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: #E6E0D2;
+    font-family: var(--sans);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: var(--bg);
+    padding: 16mm 16mm 14mm;
+    box-shadow: 0 24px 60px -20px rgba(28, 36, 32, 0.25), 0 2px 6px rgba(28,36,32,0.06);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 7mm;
+  }
+
+  /* ===== Header ===== */
+  .head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 8mm;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--line);
+  }
+  .head .meta-top {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .head .meta-top .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+    box-shadow: 0 0 0 3px rgba(58,90,64,0.12);
+  }
+  .head h1 {
+    margin: 0;
+    font-size: 46px;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .head h1 .last { color: var(--green); }
+  .head .role {
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .head .role span.sep { color: var(--olive); }
+
+  .portrait {
+    width: 34mm;
+    height: 42mm;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .portrait image-slot {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+  }
+
+  /* ===== Contact bar ===== */
+  .contact-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6mm;
+  }
+  .contact-bar .item {
+    padding: 0 8px;
+    border-left: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .contact-bar .item:first-child { border-left: 0; padding-left: 0; }
+  .contact-bar .item .lbl {
+    font-size: 8.5px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .contact-bar .item .val { color: var(--ink); font-weight: 500; word-break: break-all; }
+  .contact-bar .item .val a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--olive); }
+
+  /* ===== Layout ===== */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 9mm;
+  }
+  .col-main { display: flex; flex-direction: column; gap: 7mm; }
+  .col-side { display: flex; flex-direction: column; gap: 7mm; }
+
+  .section { display: flex; flex-direction: column; gap: 3.5mm; }
+  .section h2 {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h2::before {
+    content: "";
+    width: 14px;
+    height: 1px;
+    background: var(--green);
+  }
+  .section h2 .num {
+    color: var(--olive);
+    font-weight: 400;
+  }
+
+  .summary {
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    text-wrap: pretty;
+  }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  /* ===== Highlights ===== */
+  .highlights { display: flex; flex-direction: column; gap: 3mm; }
+  .hl {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: start;
+  }
+  .hl .tag {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    color: var(--green);
+    background: rgba(58,90,64,0.08);
+    padding: 3px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .hl .num {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .hl .txt {
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .hl .txt strong { color: var(--green-deep); font-weight: 600; }
+
+  /* ===== Experience ===== */
+  .exp { display: flex; flex-direction: column; gap: 4mm; }
+  .job {
+    display: grid;
+    grid-template-columns: 28mm 1fr;
+    gap: 4mm;
+    padding-bottom: 4mm;
+    border-bottom: 1px dashed var(--line);
+  }
+  .job:last-child { border-bottom: 0; padding-bottom: 0; }
+  .job .when {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    padding-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .job .when .yr { color: var(--green); font-weight: 500; }
+  .job .when .tag2 {
+    display: inline-block;
+    width: fit-content;
+    padding: 2px 5px;
+    border: 1px solid var(--line);
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    color: var(--olive);
+    text-transform: uppercase;
+  }
+  .job .what .title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .job .what .org {
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    margin-top: 1px;
+    font-style: italic;
+  }
+  .job .what ul {
+    margin: 5px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .job .what li {
+    font-size: 10.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    padding-left: 12px;
+    position: relative;
+  }
+  .job .what li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 7px;
+    width: 5px; height: 1px;
+    background: var(--olive);
+  }
+  .job .what li strong { color: var(--ink); font-weight: 600; }
+  .job .what li em { font-style: normal; color: var(--green); font-weight: 500; }
+
+  /* ===== Skills ===== */
+  .skill-group { display: flex; flex-direction: column; gap: 6px; }
+  .skill-group .lbl {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .skill-group .lbl::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px 5px; }
+  .chip {
+    font-size: 9.5px;
+    padding: 3px 7px;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    background: var(--surface);
+    border-radius: 1px;
+    font-family: var(--sans);
+  }
+  .chip.pri { color: var(--green-deep); border-color: rgba(58,90,64,0.4); background: rgba(58,90,64,0.06); font-weight: 500; }
+
+  /* ===== Achievements (side) ===== */
+  .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ach {
+    border: 1px solid var(--line);
+    padding: 8px 9px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .ach .big {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .ach .cap {
+    font-size: 9px;
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
+  .ach .cap strong { color: var(--ink); font-weight: 600; }
+
+  /* ===== Languages / Education ===== */
+  .kv { display: flex; flex-direction: column; gap: 5px; }
+  .kv .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    padding-bottom: 4px;
+    border-bottom: 1px dotted var(--line);
+  }
+  .kv .row .lab { color: var(--ink); font-weight: 500; }
+  .kv .row .v { font-family: var(--mono); font-size: 9.5px; color: var(--muted); }
+
+  /* ===== Footer ===== */
+  .foot {
+    border-top: 1px solid var(--line);
+    padding-top: 5mm;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .foot .right { text-align: right; }
+  .foot .stamp {
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 4px 10px;
+    border-radius: 1px;
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+  }
+
+  /* ===== Print ===== */
+  @media print {
+    html, body {
+      background: #fff;
+      padding: 0;
+      margin: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body { display: block; }
+    .page {
+      box-shadow: none;
+      width: 210mm;
+      min-height: 297mm;
+      padding: 14mm 14mm 12mm;
+      margin: 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .section, .job, .hl, .ach, .skill-group { break-inside: avoid; page-break-inside: avoid; }
+    @page { size: A4; margin: 0; }
+  }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+</style>
+</head>
+<body>
+<main class="page" data-screen-label="CV · A4">
+  <!-- ============ HEAD ============ -->
+  <header class="head">
+    <div>
+      <div class="meta-top">
+        <span class="dot"></span>
+        <span>CV · 2026</span>
+        <span>—</span>
+        <span>Hồ Chí Minh, VN</span>
+        <span>—</span>
+        <span>Sẵn sàng cộng tác</span>
+      </div>
+      <h1>Phan Duy <span class="last">Diện</span></h1>
+      <div class="role">
+        <span>Senior Digital Marketing</span>
+        <span class="sep">/</span>
+        <span>AI System Builder</span>
+        <span class="sep">/</span>
+        <span>Content Strategist</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <image-slot id="cv-portrait" shape="rect" placeholder="Ảnh chân dung 3×4"></image-slot>
+    </div>
+  </header>
+
+  <!-- ============ CONTACT ============ -->
+  <div class="contact-bar">
+    <div class="item">
+      <span class="lbl">Email</span>
+      <span class="val">dien3254@gmail.com</span>
+    </div>
+    <div class="item">
+      <span class="lbl">Facebook</span>
+      <span class="val"><a href="https://facebook.com/chudien2329">fb.com/chudien2329</a></span>
+    </div>
+    <div class="item">
+      <span class="lbl">Portfolio</span>
+      <span class="val"><a href="https://behance.net/dinphan2305">behance.net/dinphan2305</a></span>
+    </div>
+    <div class="item">
+      <span class="lbl">Vị trí ứng tuyển</span>
+      <span class="val">Senior Marketing · BĐS / SRT</span>
+    </div>
+  </div>
+
+  <!-- ============ BODY ============ -->
+  <div class="body-grid">
+
+    <!-- ========= LEFT COL ========= -->
+    <div class="col-main">
+
+      <section class="section">
+        <h2><span class="num">01</span> Tóm tắt năng lực</h2>
+        <p class="summary">
+          Senior Marketing kết hợp <strong>tư duy chiến lược</strong>, <strong>tự động hóa bằng AI</strong> và <strong>thực thi creative đa nền tảng</strong>. Có kinh nghiệm xử lý truyền thông cho ngành <strong>High-ticket</strong> (Trang sức, Thẩm mỹ, BĐS) và quản lý dự án ngân sách tỷ đồng. Sẵn sàng mang tư duy xây hệ thống tự động và chiến lược Personal Branding thực chiến áp dụng cho mô hình BĐS (SRT) — tối ưu nguồn lực, bứt phá doanh số.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2><span class="num">02</span> Kinh nghiệm làm việc</h2>
+        <div class="exp">
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2025 — Nay</span>
+              <span class="tag2">Founder</span>
+            </div>
+            <div class="what">
+              <div class="title">CEO & Marketing Director</div>
+              <div class="org">Thương hiệu Thuỷ Nguyên — Bồn tắm Japandi cao cấp</div>
+              <ul>
+                <li>Xây chiến lược launch & vận hành toàn bộ mảng Marketing cho ngành hàng cao cấp.</li>
+                <li>Ứng dụng <strong>OS Second Brain (AI)</strong> tự động hoá: nghiên cứu thị trường, content, thiết kế, video, website.</li>
+                <li><em>Giảm 100% chi phí nhân sự Marketing truyền thống</em> — vẫn giữ output chất lượng cao, vận hành độc lập.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2025 — Nay</span>
+              <span class="tag2">Self-employed</span>
+            </div>
+            <div class="what">
+              <div class="title">Personal Branding Strategist & Content Creator</div>
+              <div class="org">Dự án thương hiệu cá nhân</div>
+              <ul>
+                <li><em>0 → 11.000 followers trên Facebook trong 2 tháng</em> bằng phễu 3 tầng + kỹ thuật "Dream 100".</li>
+                <li>Phễu nội dung: (1) Viral kéo traffic → (2) Storytelling định hình danh tính → (3) Chuyên môn chuyển đổi.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2025</span>
+              <span class="tag2">Creative</span>
+            </div>
+            <div class="what">
+              <div class="title">Content Creator & Video Editor</div>
+              <div class="org">Danh Hiển Jewelry · Bác sĩ Lương Ngọc Aesthetic</div>
+              <ul>
+                <li>Sản xuất toàn bộ Media (quay, chụp, dựng video, 2D) cho Ads và đa kênh Social.</li>
+                <li>Hai ngành thẩm mỹ cực cao — <em>thấu hiểu insight tệp khách cao cấp, tương đồng khách hàng BĐS</em>.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2022 — 2024</span>
+              <span class="tag2">Freelance</span>
+            </div>
+            <div class="what">
+              <div class="title">Animator & Motion Designer</div>
+              <div class="org">Fiverr · YouTube "Me Xừ Đức"</div>
+              <ul>
+                <li>Sản xuất Video Animation (Moho) và Motion Graphic cho thị trường trong & ngoài nước.</li>
+                <li>Nhiều video đạt trăm ngàn view — <em>đỉnh điểm 1.5 triệu view/video</em>.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2021</span>
+              <span class="tag2">Project Mgmt</span>
+            </div>
+            <div class="what">
+              <div class="title">Project Manager</div>
+              <div class="org">Người Sài Gòn Media</div>
+              <ul>
+                <li><strong>Lotus × Doraemon:</strong> quản lý POSM ngân sách <em>~1 tỷ VNĐ</em>, điều phối đa xưởng sản xuất.</li>
+                <li><strong>SNNP:</strong> brief & quản lý chất lượng output gần <em>100 KOL/KOC</em>.</li>
+                <li><strong>Viettel Wifi Mesh:</strong> media booking + trực tiếp design banner PR.</li>
+                <li><strong>Anlene (Thuỵ Sĩ):</strong> Technical BA — cầu nối Global PM ↔ Dev nội bộ; xử lý hạ tầng Website.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ========= RIGHT COL ========= -->
+    <aside class="col-side">
+
+      <section class="section">
+        <h2><span class="num">03</span> Điểm mạnh cốt lõi</h2>
+        <div class="highlights">
+          <div class="hl">
+            <span class="tag">AI · SYS</span>
+            <p class="txt">Tự xây <strong>OS Second Brain</strong>, thay thế khối lượng việc của <strong>phòng Marketing 5 người</strong> (Content / Designer / Editor / Dev) — vận hành độc lập một thương hiệu.</p>
+            <span class="num">01</span>
+          </div>
+          <div class="hl">
+            <span class="tag">BRAND</span>
+            <p class="txt"><strong>0 → 11K followers trong 2 tháng</strong> bằng phễu 3 tầng + Dream 100 — sẵn sàng đóng gói cho môi giới / dự án BĐS.</p>
+            <span class="num">02</span>
+          </div>
+          <div class="hl">
+            <span class="tag">CREATIVE</span>
+            <p class="txt">Kinh nghiệm sâu với ngành High-ticket; <strong>After Effects</strong> chuyên video giới thiệu dự án BĐS chuyên nghiệp.</p>
+            <span class="num">03</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2><span class="num">04</span> Số liệu nổi bật</h2>
+        <div class="ach-grid">
+          <div class="ach">
+            <div class="big">11K</div>
+            <div class="cap"><strong>Followers</strong> Facebook · 2 tháng</div>
+          </div>
+          <div class="ach">
+            <div class="big">1.5M</div>
+            <div class="cap"><strong>Views</strong> video / đỉnh điểm</div>
+          </div>
+          <div class="ach">
+            <div class="big">~1tỷ</div>
+            <div class="cap">VNĐ <strong>ngân sách</strong> quản lý</div>
+          </div>
+          <div class="ach">
+            <div class="big">100</div>
+            <div class="cap"><strong>KOL/KOC</strong> điều phối</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2><span class="num">05</span> Kỹ năng & Công cụ</h2>
+
+        <div class="skill-group">
+          <div class="lbl">Chiến lược</div>
+          <div class="chips">
+            <span class="chip pri">Phễu 3 tầng</span>
+            <span class="chip pri">Personal Branding</span>
+            <span class="chip">PM Marketing</span>
+            <span class="chip">KOLs / Vendors</span>
+            <span class="chip">Dream 100</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="lbl">AI & Systems</div>
+          <div class="chips">
+            <span class="chip pri">OS Second Brain</span>
+            <span class="chip pri">Obsidian + Agents</span>
+            <span class="chip">Prompt Engineering</span>
+            <span class="chip">Auto Workflow</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="lbl">Creative · Design</div>
+          <div class="chips">
+            <span class="chip">Photoshop</span>
+            <span class="chip">Illustrator</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Canva</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="lbl">Video · Motion</div>
+          <div class="chips">
+            <span class="chip pri">After Effects</span>
+            <span class="chip">Premiere Pro</span>
+            <span class="chip">CapCut</span>
+            <span class="chip">Moho</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="lbl">Tech</div>
+          <div class="chips">
+            <span class="chip">HTML / CSS</span>
+            <span class="chip">Front-end basics</span>
+            <span class="chip">Website systems</span>
+          </div>
+        </div>
+      </section>
+
+    </aside>
+  </div>
+
+  <!-- ============ FOOT ============ -->
+  <footer class="foot">
+    <div>Phan Duy Diện · CV · v2026.05</div>
+    <div class="stamp">Ready · BĐS / SRT</div>
+    <div class="right">Xem Portfolio →</div>
+  </footer>
+</main>
+<script>
+  (async function () {
+    try { if (document.fonts && document.fonts.ready) { await document.fonts.ready; } } catch (e) {}
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await new Promise((r) => setTimeout(r, 500));
+    window.print();
+  })();
+</script>
+</body>
+</html>

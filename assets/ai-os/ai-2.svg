@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet" font-family="JetBrains Mono, ui-monospace, monospace">
+  <defs>
+    <pattern id="grid-h" width="800" height="40" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="800" y2="0" stroke="#3A5A40" stroke-width="0.4" opacity="0.06"></line>
+    </pattern>
+  </defs>
+
+  
+  <rect width="800" height="1000" fill="#F4EFE3"></rect>
+  <rect width="800" height="1000" fill="url(#grid-h)"></rect>
+
+  
+  <g stroke="#3A5A40" stroke-width="1.2" fill="none">
+    <path d="M22 22 L62 22 M22 22 L22 62"></path>
+    <path d="M778 22 L738 22 M778 22 L778 62"></path>
+    <path d="M22 978 L62 978 M22 978 L22 938"></path>
+    <path d="M778 978 L738 978 M778 978 L778 938"></path>
+  </g>
+
+  
+  <g fill="#3A5A40">
+    <text x="60" y="56" font-size="13" letter-spacing="3">PIPELINE / AUTOMATION FLOW</text>
+    <text x="60" y="76" font-size="10" letter-spacing="2.2" fill="#7C8076">INPUT → AGENTS → OUTPUT</text>
+  </g>
+  <text x="740" y="56" font-size="10" letter-spacing="2.4" fill="#3A5A40" text-anchor="end">[ FIG · 02 ]</text>
+
+  
+  <line x1="170" y1="140" x2="170" y2="880" stroke="#3A5A40" stroke-width="0.8" opacity="0.5"></line>
+
+  
+  <g fill="#7C8076" font-size="9" letter-spacing="2" text-anchor="end">
+    <text x="155" y="155">T+00s</text>
+    <text x="155" y="335">T+05s</text>
+    <text x="155" y="515">T+12s</text>
+    <text x="155" y="695">T+18s</text>
+    <text x="155" y="875">T+24s</text>
+  </g>
+  <g stroke="#3A5A40" stroke-width="0.8">
+    <line x1="162" y1="152" x2="178" y2="152"></line>
+    <line x1="162" y1="332" x2="178" y2="332"></line>
+    <line x1="162" y1="512" x2="178" y2="512"></line>
+    <line x1="162" y1="692" x2="178" y2="692"></line>
+    <line x1="162" y1="872" x2="178" y2="872"></line>
+  </g>
+
+  
+  <g transform="translate(220 130)">
+    <rect width="540" height="120" fill="#F4EFE3" stroke="#3A5A40" stroke-width="1.2"></rect>
+    <text x="20" y="34" font-size="10" letter-spacing="2.5" fill="#7C8076">STAGE 01 · INPUT</text>
+    <text x="20" y="64" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="600" fill="#3A5A40">Brief &amp; Market Data</text>
+    <text x="20" y="92" font-size="10.5" fill="#3A463C" letter-spacing="0.4">Goal · Target Audience · Brand Voice · Competitors</text>
+    
+    <g transform="translate(490 50)">
+      <rect x="-30" y="-22" width="40" height="44" fill="none" stroke="#3A5A40" stroke-width="1"></rect>
+      <line x1="-22" y1="-12" x2="2" y2="-12" stroke="#3A5A40" stroke-width="1"></line>
+      <line x1="-22" y1="-4" x2="2" y2="-4" stroke="#3A5A40" stroke-width="1"></line>
+      <line x1="-22" y1="4" x2="-8" y2="4" stroke="#3A5A40" stroke-width="1"></line>
+    </g>
+  </g>
+
+  
+  <g stroke="#3A5A40" fill="none" stroke-width="1">
+    <line x1="490" y1="250" x2="490" y2="305"></line>
+    <path d="M484 297 L490 309 L496 297" stroke-linejoin="round"></path>
+  </g>
+
+  
+  <g transform="translate(220 310)">
+    <rect width="540" height="120" fill="#3A5A40" stroke="#3A5A40" stroke-width="1.2"></rect>
+    <text x="20" y="34" font-size="10" letter-spacing="2.5" fill="#A8B095">STAGE 02 · AGENTS</text>
+    <text x="20" y="64" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="600" fill="#F4EFE3">5 Specialized AIs</text>
+    <text x="20" y="92" font-size="10.5" fill="#A8B095" letter-spacing="0.4">Researcher · Writer · Designer · Editor · Web</text>
+    <g transform="translate(450 60)" fill="#F4EFE3">
+      <circle cx="0" cy="0" r="6"></circle>
+      <circle cx="20" cy="0" r="6"></circle>
+      <circle cx="40" cy="0" r="6"></circle>
+      <circle cx="10" cy="16" r="6"></circle>
+      <circle cx="30" cy="16" r="6"></circle>
+    </g>
+  </g>
+
+  
+  <g stroke="#3A5A40" fill="none" stroke-width="1">
+    <line x1="490" y1="430" x2="490" y2="485"></line>
+    <path d="M484 477 L490 489 L496 477" stroke-linejoin="round"></path>
+  </g>
+
+  
+  <g transform="translate(220 490)">
+    <rect width="540" height="120" fill="#F4EFE3" stroke="#3A5A40" stroke-width="1.2"></rect>
+    <text x="20" y="34" font-size="10" letter-spacing="2.5" fill="#7C8076">STAGE 03 · DRAFT</text>
+    <text x="20" y="64" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="600" fill="#3A5A40">Multi-format Output</text>
+    <text x="20" y="92" font-size="10.5" fill="#3A463C" letter-spacing="0.4">Copy · Visuals · Reels · Web Snippets · Ad Variants</text>
+    <g transform="translate(450 36)" stroke="#3A5A40" stroke-width="1" fill="none">
+      <rect x="0" y="0" width="14" height="18"></rect>
+      <rect x="20" y="0" width="14" height="18"></rect>
+      <rect x="40" y="0" width="14" height="18"></rect>
+      <rect x="10" y="26" width="14" height="18"></rect>
+      <rect x="30" y="26" width="14" height="18"></rect>
+    </g>
+  </g>
+
+  
+  <g stroke="#3A5A40" fill="none" stroke-width="1">
+    <line x1="490" y1="610" x2="490" y2="665"></line>
+    <path d="M484 657 L490 669 L496 657" stroke-linejoin="round"></path>
+  </g>
+
+  
+  <g transform="translate(220 670)">
+    <rect width="540" height="120" fill="#F4EFE3" stroke="#3A5A40" stroke-width="1.2" stroke-dasharray="4 4"></rect>
+    <text x="20" y="34" font-size="10" letter-spacing="2.5" fill="#7C8076">STAGE 04 · HUMAN GATE</text>
+    <text x="20" y="64" font-family="Space Grotesk, sans-serif" font-size="22" font-weight="600" fill="#3A5A40">Diện · Operator QC</text>
+    <text x="20" y="92" font-size="10.5" fill="#3A463C" letter-spacing="0.4">Strategy check · Brand voice · Final polish</text>
+    <g transform="translate(488 60)" stroke="#3A5A40" stroke-width="1.2" fill="none">
+      <circle r="14"></circle>
+      <path d="M-6 0 L-1 5 L7 -5"></path>
+    </g>
+  </g>
+
+  
+  <g stroke="#3A5A40" fill="none" stroke-width="1">
+    <line x1="490" y1="790" x2="490" y2="845"></line>
+    <path d="M484 837 L490 849 L496 837" stroke-linejoin="round"></path>
+  </g>
+
+  
+  <g transform="translate(220 850)">
+    <rect width="540" height="50" fill="#3A5A40" stroke="#3A5A40" stroke-width="1.2"></rect>
+    <text x="20" y="22" font-size="10" letter-spacing="2.5" fill="#A8B095">STAGE 05 · DELIVERY</text>
+    <text x="20" y="40" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600" fill="#F4EFE3">Auto-publish · Multi-channel</text>
+    <text x="520" y="32" text-anchor="end" font-size="10" letter-spacing="2" fill="#A8B095">LIVE</text>
+    <circle cx="500" cy="29" r="3" fill="#F4EFE3"></circle>
+  </g>
+
+  
+  <g fill="#7C8076" font-size="9.5" letter-spacing="2">
+    <text x="60" y="956">~24s · END-TO-END · ONE OPERATOR</text>
+  </g>
+  <text x="740" y="956" font-size="9.5" text-anchor="end" letter-spacing="2" fill="#3A5A40">SECOND BRAIN / v2.4</text>
+</svg>
