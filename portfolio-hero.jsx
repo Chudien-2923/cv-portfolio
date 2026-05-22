@@ -106,7 +106,7 @@ function Hero() {
 
         <div className="hero-portrait reveal d2">
           <span className="corner tl">PDD · 2026</span>
-          <image-slot id="hero-portrait" shape="rect" placeholder="Ảnh chân dung chính"></image-slot>
+          <image-slot id="hero-portrait" shape="rect" placeholder="Ảnh chân dung chính" src="assets/portrait.png"></image-slot>
           <span className="corner br">SR. MKT</span>
         </div>
       </div>
