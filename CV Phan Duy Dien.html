@@ -34,19 +34,20 @@
     text-rendering: optimizeLegibility;
     padding: 32px 16px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
   }
 
   .page {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;
     background: var(--bg);
     padding: 16mm 16mm 14mm;
     box-shadow: 0 24px 60px -20px rgba(28, 36, 32, 0.25), 0 2px 6px rgba(28,36,32,0.06);
     position: relative;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 7mm;
+    display: flex;
+    flex-direction: column;
   }
 
   /* ===== Header ===== */
@@ -117,7 +118,7 @@
     font-size: 10.5px;
     color: var(--ink-soft);
     border-bottom: 1px solid var(--line);
-    padding-bottom: 6mm;
+    padding: 6mm 0;
   }
   .contact-bar .item {
     padding: 0 8px;
@@ -141,6 +142,9 @@
     display: grid;
     grid-template-columns: 1.55fr 1fr;
     gap: 9mm;
+    flex: 1;
+    padding-top: 7mm;
+    align-content: start;
   }
   .col-main { display: flex; flex-direction: column; gap: 7mm; }
   .col-side { display: flex; flex-direction: column; gap: 7mm; }
@@ -349,6 +353,33 @@
   .kv .row .lab { color: var(--ink); font-weight: 500; }
   .kv .row .v { font-family: var(--mono); font-size: 9.5px; color: var(--muted); }
 
+  /* ===== Page 2 mini header ===== */
+  .head-mini {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .head-mini .name {
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    text-transform: none;
+  }
+  .head-mini .name .last { color: var(--green); }
+  .head-mini .page-num {
+    color: var(--green);
+    font-weight: 500;
+  }
+
   /* ===== Footer ===== */
   .foot {
     border-top: 1px solid var(--line);
@@ -362,6 +393,7 @@
     letter-spacing: 0.12em;
     color: var(--muted);
     text-transform: uppercase;
+    margin-top: auto;
   }
   .foot .right { text-align: right; }
   .foot .stamp {
@@ -373,22 +405,38 @@
     letter-spacing: 0.18em;
   }
 
+  /* ===== Page number ===== */
+  .page-foot {
+    margin-top: auto;
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    padding-top: 5mm;
+    border-top: 1px solid var(--line);
+  }
+
   /* ===== Print ===== */
   @media print {
-    body { background: #fff; padding: 0; }
+    body { background: #fff; padding: 0; gap: 0; }
     .page {
       box-shadow: none;
       width: 210mm;
-      min-height: 297mm;
-      padding: 14mm 14mm 12mm;
+      height: 297mm;
+      padding: 16mm 16mm 14mm;
+      page-break-after: always;
     }
+    .page:last-child { page-break-after: auto; }
     @page { size: A4; margin: 0; }
   }
 </style>
 </head>
 <body>
-<main class="page" data-screen-label="CV · A4">
-  <!-- ============ HEAD ============ -->
+
+<!-- ==================== PAGE 1 ==================== -->
+<main class="page" data-screen-label="CV · Page 1">
+
   <header class="head">
     <div>
       <div class="meta-top">
@@ -413,7 +461,6 @@
     </div>
   </header>
 
-  <!-- ============ CONTACT ============ -->
   <div class="contact-bar">
     <div class="item">
       <span class="lbl">Email</span>
@@ -433,10 +480,7 @@
     </div>
   </div>
 
-  <!-- ============ BODY ============ -->
   <div class="body-grid">
-
-    <!-- ========= LEFT COL ========= -->
     <div class="col-main">
 
       <section class="section">
@@ -496,43 +540,11 @@
             </div>
           </article>
 
-          <article class="job">
-            <div class="when">
-              <span class="yr">2022 — 2024</span>
-              <span class="tag2">Freelance</span>
-            </div>
-            <div class="what">
-              <div class="title">Animator & Motion Designer</div>
-              <div class="org">Fiverr · YouTube "Me Xừ Đức"</div>
-              <ul>
-                <li>Sản xuất Video Animation (Moho) và Motion Graphic cho thị trường trong & ngoài nước.</li>
-                <li>Nhiều video đạt trăm ngàn view — <em>đỉnh điểm 1.5 triệu view/video</em>.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="when">
-              <span class="yr">2021</span>
-              <span class="tag2">Project Mgmt</span>
-            </div>
-            <div class="what">
-              <div class="title">Project Manager</div>
-              <div class="org">Người Sài Gòn Media</div>
-              <ul>
-                <li><strong>Lotus × Doraemon:</strong> quản lý POSM ngân sách <em>~1 tỷ VNĐ</em>, điều phối đa xưởng sản xuất.</li>
-                <li><strong>SNNP:</strong> brief & quản lý chất lượng output gần <em>100 KOL/KOC</em>.</li>
-                <li><strong>Viettel Wifi Mesh:</strong> media booking + trực tiếp design banner PR.</li>
-                <li><strong>Anlene (Thuỵ Sĩ):</strong> Technical BA — cầu nối Global PM ↔ Dev nội bộ; xử lý hạ tầng Website.</li>
-              </ul>
-            </div>
-          </article>
-
         </div>
       </section>
+
     </div>
 
-    <!-- ========= RIGHT COL ========= -->
     <aside class="col-side">
 
       <section class="section">
@@ -577,6 +589,95 @@
           </div>
         </div>
       </section>
+
+    </aside>
+  </div>
+
+  <div class="page-foot">Trang 1 / 2</div>
+
+</main>
+
+<!-- ==================== PAGE 2 ==================== -->
+<main class="page" data-screen-label="CV · Page 2">
+
+  <div class="head-mini">
+    <div class="name">Phan Duy <span class="last">Diện</span></div>
+    <div>CV · 2026 · <span class="page-num">Trang 2</span></div>
+  </div>
+
+  <div class="body-grid">
+    <div class="col-main">
+
+      <section class="section">
+        <h2><span class="num">02</span> Kinh nghiệm <span style="color:var(--muted);font-weight:400;margin-left:4px">(tiếp)</span></h2>
+        <div class="exp">
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2022 — 2024</span>
+              <span class="tag2">Freelance</span>
+            </div>
+            <div class="what">
+              <div class="title">Animator & Motion Designer</div>
+              <div class="org">Fiverr · YouTube "Me Xừ Đức"</div>
+              <ul>
+                <li>Sản xuất Video Animation (Moho) và Motion Graphic cho thị trường trong & ngoài nước.</li>
+                <li>Nhiều video đạt trăm ngàn view — <em>đỉnh điểm 1.5 triệu view/video</em>.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <div class="when">
+              <span class="yr">2021</span>
+              <span class="tag2">Project Mgmt</span>
+            </div>
+            <div class="what">
+              <div class="title">Project Manager</div>
+              <div class="org">Người Sài Gòn Media</div>
+              <ul>
+                <li><strong>Lotus × Doraemon:</strong> quản lý POSM ngân sách <em>~1 tỷ VNĐ</em>, điều phối đa xưởng sản xuất.</li>
+                <li><strong>SNNP:</strong> brief & quản lý chất lượng output gần <em>100 KOL/KOC</em>.</li>
+                <li><strong>Viettel Wifi Mesh:</strong> media booking + trực tiếp design banner PR.</li>
+                <li><strong>Anlene (Thuỵ Sĩ):</strong> Technical BA — cầu nối Global PM ↔ Dev nội bộ; xử lý hạ tầng Website.</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <h2><span class="num">06</span> Học vấn</h2>
+        <div class="kv">
+          <div class="row">
+            <span class="lab">Đại học FPT (theo học)</span>
+            <span class="v">Digital Marketing</span>
+          </div>
+          <div class="row">
+            <span class="lab">Tự học chuyên sâu</span>
+            <span class="v">AI · Automation · Video</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2><span class="num">07</span> Ngôn ngữ</h2>
+        <div class="kv">
+          <div class="row">
+            <span class="lab">Tiếng Việt</span>
+            <span class="v">Bản ngữ</span>
+          </div>
+          <div class="row">
+            <span class="lab">Tiếng Anh</span>
+            <span class="v">Giao tiếp · Đọc tài liệu</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="col-side">
 
       <section class="section">
         <h2><span class="num">05</span> Kỹ năng & Công cụ</h2>
@@ -635,12 +736,13 @@
     </aside>
   </div>
 
-  <!-- ============ FOOT ============ -->
   <footer class="foot">
     <div>Phan Duy Diện · CV · v2026.05</div>
     <div class="stamp">Ready · BĐS / SRT</div>
     <div class="right">Xem Portfolio →</div>
   </footer>
+
 </main>
+
 </body>
 </html>
