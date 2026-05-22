@@ -124,7 +124,8 @@ function CaseBlock({ c, idx }) {
 
         <div className={"case-images " + layout}>
           {c.slots.map((s) =>
-          <div key={s.id} className={"slot " + (s.className || "")}>
+          <div key={s.id} className={"slot " + (s.className || "")} style={{cursor:"pointer"}}
+            onClick={(e) => openLightboxFromSlot(e.currentTarget, s.src || "", s.label)}>
               {s.src && /\.svg$/i.test(s.src) ?
             <img src={s.src} alt={s.label} className="slot-svg" style={{ width: "1px" }} /> :
             <image-slot id={s.id} shape="rect" placeholder={s.label} {...s.src ? { src: s.src } : {}} {...s.fit ? { fit: s.fit } : {}}></image-slot>
@@ -225,7 +226,8 @@ function Works() {
               key={w.slot}
               className={"work reveal d" + Math.min(i % 3, 3)}
               {...props}>
-            <div className="work-img">
+            <div className="work-img" style={{cursor:"pointer"}}
+              onClick={(e) => {e.preventDefault();e.stopPropagation();openLightboxFromSlot(e.currentTarget, w.src || "", w.title);}}>
               <span className="corner-tag">{w.tag}</span>
               <image-slot id={w.slot} shape="rect" placeholder={w.title + " — " + w.tag} {...(w.src ? { src: w.src } : {})} {...(w.fit ? { fit: w.fit } : {})}></image-slot>
             </div>
